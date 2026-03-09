@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Veltrix</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand logo-veltrix" href="../../index.html">
+                Veltrix Dashboard
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto nav-veltrix">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../serviços/escolha-serviços.html">Serviços</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container mt-4">
+
+        <!-- Cards de Status -->
+        <div class="cards-row">
+            <div class="status-card ativo">
+                <h5 class="card-title">Serviços Ativos</h5>
+                <p class="card-text" id="activeServices">0</p>
+            </div>
+            <div class="status-card concluido">
+                <h5 class="card-title">Serviços Concluídos</h5>
+                <p class="card-text" id="completedServices">0</p>
+            </div>
+            <div class="status-card pendente">
+                <h5 class="card-title">Pendentes</h5>
+                <p class="card-text" id="pendingServices">0</p>
+            </div>
+            <div class="status-card erro">
+                <h5 class="card-title">Erros</h5>
+                <p class="card-text" id="errorServices">0</p>
+            </div>
+        </div>
+
+        <!-- Form adicionar/editar -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card section-form p-3">
+                    <h5 class="card-title">Adicionar / Editar Serviço</h5>
+                    <form id="serviceForm">
+                        <input type="hidden" id="editId">
+                        <div class="row g-2">
+                            <div class="col-md-3">
+                                <input type="text" id="serviceName" class="form-control" placeholder="Nome do Serviço"
+                                    required>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" id="serviceClient" class="form-control" placeholder="Cliente"
+                                    required>
+                            </div>
+                            <div class="col-md-3">
+                                <select id="serviceStatus" class="form-control" required>
+                                    <option value="">Status</option>
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Concluído">Concluído</option>
+                                    <option value="Pendente">Pendente</option>
+                                    <option value="Erro">Erro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="date" id="serviceDate" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-save">Salvar</button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Tabela serviços -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Lista de Serviços</h5>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>N°</th>
+                                    <th>Serviço</th>
+                                    <th>Cliente</th>
+                                    <th>Status</th>
+                                    <th>Data</th>
+                                    <th>Motivo Adiado</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="serviceTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal Adiar -->
+    <div class="modal" id="postponeModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Adiar Serviço</h5>
+                    <button type="button" class="btn-close" onclick="closeModal()"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="postponeId">
+                    <div class="mb-3">
+                        <label>Motivo da Adiação</label>
+                        <textarea id="postponeReason" class="form-control" rows="3"
+                            placeholder="Digite o motivo"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label>Nova Data</label>
+                        <input type="date" id="postponeDate" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+                    <button class="btn btn-primary" onclick="savePostpone()">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

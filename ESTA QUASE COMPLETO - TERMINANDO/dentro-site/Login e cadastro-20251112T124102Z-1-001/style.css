@@ -1,0 +1,553 @@
+/* === FONTES E RESET === */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* === FUNDO GERAL === */
+body {
+  background: linear-gradient(135deg, #0a0f2c, #162362);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* === FUNDO ANIMADO === */
+.bg-symbols {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.symbol {
+  position: absolute;
+  font-size: 25px;
+  opacity: 0.2;
+  color: #00aaff;
+  animation: float 10s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-40px) rotate(180deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+/* === POSIÇÕES DOS SÍMBOLOS === */
+.t1 {
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+.t2 {
+  top: 50%;
+  left: 70%;
+  animation-delay: 2s;
+}
+.t3 {
+  top: 80%;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+.c1 {
+  top: 20%;
+  left: 80%;
+  animation-delay: 1s;
+}
+.c2 {
+  top: 60%;
+  left: 10%;
+  animation-delay: 3s;
+}
+.c3 {
+  top: 90%;
+  left: 50%;
+  animation-delay: 5s;
+}
+
+.x1 {
+  top: 5%;
+  left: 40%;
+  animation-delay: 0.5s;
+}
+.x2 {
+  top: 40%;
+  left: 85%;
+  animation-delay: 2.5s;
+}
+.x3 {
+  top: 75%;
+  left: 20%;
+  animation-delay: 4.5s;
+}
+
+.s1 {
+  top: 30%;
+  left: 60%;
+  animation-delay: 1.5s;
+}
+.s2 {
+  top: 70%;
+  left: 80%;
+  animation-delay: 3.5s;
+}
+.s3 {
+  top: 90%;
+  left: 5%;
+  animation-delay: 5.5s;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  width: 800px;
+  max-width: 100%;
+  min-height: 480px;
+  z-index: 1;
+}
+
+/* === FORMULÁRIOS === */
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* espaçamento entre elementos */
+  padding: 60px 50px;
+  text-align: center;
+}
+
+form h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+form span {
+  font-size: 14px;
+  color: #ddd;
+}
+
+form p {
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* === AJUSTE POSIÇÃO "ESQUECEU SUA SENHA?" === */
+form a {
+  margin-top: 0px; /* sobe um pouquinho */
+  margin-bottom: 2px; /* deixa um pequeno respiro antes do botão */
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+
+/* === INPUTS === */
+input {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+  border-radius: 8px;
+  width: 100%;
+  color: #000;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #555;
+}
+
+/* === BOTÕES === */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 45px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #005fcc;
+}
+
+button.hidden {
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+button.hidden:hover {
+  background-color: #fff;
+  color: #0044ff;
+}
+
+/* === LINKS E TEXTOS === */
+a {
+  color: #00aaff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === SOCIAL ICONS === */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* === LADOS (CORRIGIDOS) === */
+.sign-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s ease-in-out;
+}
+/* Formulários fixos, cada um no seu lado */
+.sign-in-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* sempre abaixo do toggle */
+}
+
+.sign-up-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* sempre abaixo do toggle */
+}
+
+/* === ALINHAR BOTÃO "CADASTRAR" COM "ENTRAR" === */
+.sign-up-container form button {
+  margin-top: -20px; /* sobe pra alinhar com o botão de login */
+  margin-bottom: 5px;
+}
+
+/* opcional: garante que os dois botões fiquem com a mesma altura e estilo */
+.sign-up-container form button,
+.sign-in-container form button {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-up-container form h1 {
+  position: relative;
+  top: 20px;
+}
+
+
+
+/* Toggle animado por cima de tudo */
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  z-index: 2; /* acima dos formulários */
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+}
+
+.container.active .toggle-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+@keyframes move {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+
+/* === TOGGLE (CORRIGIDO) === */
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+}
+
+.container.active .toggle-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+  background: linear-gradient(135deg, #0044ff, #00aaff);
+  height: 100%;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+  display: flex;
+}
+
+.container.active .toggle {
+  transform: translateX(50%);
+}
+
+/* === TOGGLE PANELS === */
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  text-align: center;
+  gap: 30px;
+}
+
+.toggle-left {
+  transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+  transform: translateX(0);
+}
+
+.toggle-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.active .toggle-right {
+  transform: translateX(200%);
+}
+
+/* === EFEITO LASER NOS BOTÕES === */
+button {
+  position: relative;
+  overflow: hidden;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 45px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
+}
+
+/* Pseudo-elemento que vai ser o laser */
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%; /* começa fora do botão */
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: all 0.8s ease;
+}
+
+/* Animação do laser ao passar o mouse */
+button:hover::before {
+  left: 125%; /* atravessa o botão todo */
+  transition: all 0.8s ease;
+}
+
+/* Mantém o efeito neon já existente */
+button:hover {
+  background-color: #005fcc;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.744), 0 0 40px rgba(0, 170, 255, 0.6),
+    0 0 20px rgba(0, 170, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* === EFEITO RGB SUAVE AO REDOR DO CONTAINER === */
+.container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15), 0 0 45px rgba(255, 0, 255, 0.1),
+    0 0 70px rgba(0, 170, 255, 0.05);
+  width: 800px;
+  max-width: 100%;
+  min-height: 480px;
+  z-index: 1;
+  transition: box-shadow 1s ease-in-out;
+  animation: rgbGlow 6s infinite ease-in-out;
+}
+
+/* brilho pulsando suave */
+@keyframes rgbGlow {
+  0% {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.15),
+      0 0 45px rgba(255, 0, 255, 0.1), 0 0 70px rgba(0, 170, 255, 0.05),
+      0 0 25px rgba(0, 255, 255, 0.15) inset,
+      0 0 45px rgba(255, 0, 255, 0.1) inset,
+      0 0 70px rgba(0, 170, 255, 0.05) inset;
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.25),
+      0 0 60px rgba(255, 0, 255, 0.2), 0 0 90px rgba(0, 170, 255, 0.1),
+      0 0 35px rgba(0, 255, 255, 0.25) inset,
+      0 0 60px rgba(255, 0, 255, 0.2) inset,
+      0 0 90px rgba(0, 170, 255, 0.1) inset;
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.15),
+      0 0 45px rgba(255, 0, 255, 0.1), 0 0 70px rgba(0, 170, 255, 0.05),
+      0 0 25px rgba(0, 255, 255, 0.15) inset,
+      0 0 45px rgba(255, 0, 255, 0.1) inset,
+      0 0 70px rgba(0, 170, 255, 0.05) inset;
+  }
+}
+
+
+/* PARTE DO CHECK BOX  */
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 0px;
+  top: -10px;
+  gap: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #cfdcff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"] {
+  accent-color: #00aaff; /* cor do check padrão */
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px rgba(0, 170, 255, 0.6));
+  transition: all 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:hover {
+  filter: drop-shadow(0 0 10px rgba(0, 170, 255, 0.9));
+  transform: scale(1.1);
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+  filter: drop-shadow(0 0 12px rgba(0, 200, 255, 0.9));
+}
+
+.checkbox-container label {
+  transition: color 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label {
+  color: #00ccff;
+  text-shadow: 0 0 6px rgba(0, 200, 255, 0.7);
+}

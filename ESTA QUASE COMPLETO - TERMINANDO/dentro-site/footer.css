@@ -1,0 +1,104 @@
+.footer-social {
+   background-color: #1b1f2a;
+  padding: 40px 60px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* separa logo, ícones e texto */
+  flex-wrap: wrap; /* deixa responsivo */
+  gap: 20px;
+}
+
+/* LOGO à esquerda */
+.logo-footer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo-footer img {
+  width: 140px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 10px #60a5fa)
+    drop-shadow(0 0 20px rgba(96, 165, 250, 0.8));
+  animation: glow-logo 2s infinite alternate;
+}
+
+.logo-footer img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 25px #60a5fa)
+    drop-shadow(0 0 40px rgba(96, 165, 250, 1));
+}
+
+/* ÍCONES no centro */
+.socials {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* BOTÕES de redes sociais */
+.social-btn {
+  width: 130px;
+  height: 50px;
+  background: #1b284ab8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  box-shadow: 0 15px 0 rgba(0, 0, 0, 0.15);
+  transform: rotateX(30deg);
+  transform-origin: bottom;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.social-btn:hover {
+  transform: rotateX(-20deg) translateY(-10px);
+  box-shadow: 0 25px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Cores de cada rede */
+.social-btn.facebook {
+  color: #1877f2;
+}
+.social-btn.chat {
+  color: #e1306c;
+}
+.social-btn.WhatsApp {
+  color: #25d366;
+}
+
+.social-btn i {
+  font-size: 1.2rem;
+}
+
+/* TEXTO à direita */
+.footer-rights {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* ANIMAÇÃO do logo */
+@keyframes glow-logo {
+  0% {
+    filter: drop-shadow(0 0 10px #60a5fa)
+      drop-shadow(0 0 20px rgba(96, 165, 250, 0.6));
+  }
+  100% {
+    filter: drop-shadow(0 0 25px #60a5fa)
+      drop-shadow(0 0 40px rgba(96, 165, 250, 1));
+  }
+}

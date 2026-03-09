@@ -1,0 +1,340 @@
+/* ===== Geral do dashboard ===== */
+body {
+    background-color: #f4f6f8;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #222;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background: linear-gradient(135deg, #001f3f, #0a0a0a);
+    padding: 20px;
+}
+
+/* Nome na Nav bar da Veltrix */
+
+.logo-veltrix {
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    animation: glowPulse 2.5s infinite ease-in-out;
+    transition: transform 0.25s ease, font-size 0.25s ease;
+    font-size: 25px;
+    left: 360px;
+}
+
+/* luz branca pulsando */
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 4px rgba(255,255,255,0.3),
+                     0 0 8px rgba(255,255,255,0.2);
+    }
+    50% {
+        text-shadow: 0 0 8px rgba(255,255,255,0.6),
+                     0 0 16px rgba(255,255,255,0.4);
+    }
+    100% {
+        text-shadow: 0 0 4px rgba(255,255,255,0.3),
+                     0 0 8px rgba(255,255,255,0.2);
+    }
+}
+
+/* hover: cresce e fica mais forte */
+.logo-veltrix:hover {
+    transform: scale(1.08);
+    text-shadow: 0 0 10px rgba(255,255,255,0.9),
+                 0 0 20px rgba(255,255,255,0.6);
+}
+
+/* clique */
+.logo-veltrix:active {
+    transform: scale(0.95);
+}
+
+
+
+
+  /* Botoes com link */
+
+.nav-veltrix .nav-link {
+    position: relative;
+    font-weight: 500;
+    padding: 10px 14px;
+    Right: 380px;
+    font-size: bold;
+    transition: transform 0.25s ease, text-shadow 0.25s ease;
+}
+
+/* hover = brilho + underline */
+.nav-veltrix .nav-link:hover {
+    transform: translateY(-2px) scale(1.05);
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.826),
+        0 0 12px rgba(255,255,255,0.3);
+}
+
+.nav-veltrix .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background: rgba(255,255,255,0.9);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-veltrix .nav-link:hover::after {
+    width: 70%;
+}
+
+/* active NÃO brilha */
+.nav-veltrix .nav-link.active {
+    font-weight: 600; /* só destaca no peso */
+}
+
+/* garante que active não force underline */
+.nav-veltrix .nav-link.active::after {
+    width: 0;
+}
+
+
+/* ===== Cards de status ===== */
+.cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;       /* espaçamento horizontal e vertical */
+    margin-bottom: 40px;
+}
+
+.status-card {
+    flex: 1 1 calc(25% - 20px);
+    min-width: 200px;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.status-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.status-card.ativo { background-color: #0d6efd; color: #fff; }
+.status-card.concluido { background-color: #198754; color: #fff; }
+.status-card.pendente { background-color: #ffc107; color: #fff; }
+.status-card.erro { background-color: #dc3545; color: #fff; }
+
+/* ===== Cards gerais (form, tabela, etc) ===== */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.card h5 {
+    margin-top: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* ===== Formulário ===== */
+form input, form select, form textarea {
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+form button {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button:hover {
+    opacity: 0.85;
+}
+
+/* ===== Tabela ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+}
+
+table thead {
+    background-color: #343a40;
+    color: #fff;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f4f6f8;
+}
+
+table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* ===== Modal ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-dialog {
+    max-width: 500px;
+    margin: 10% auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal textarea, .modal input {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+/* ===== Botões gerais ===== */
+button {
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+    cursor: pointer;
+    right: 80px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+    right: 60px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end; /* empurra o botão totalmente para a direita */
+    margin-top: 15px;
+}
+
+.btn-save {
+    background-color: #0d6efd; /* azul */
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    border: none;
+}
+
+.btn-save:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+/* ===== Canvas gráfico ===== */
+#serviceChart {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    display: block;
+}
+
+/* ===== Seção Adicionar/Editar Serviço ===== */
+.section-form {
+    background-color: #fff;
+    border-radius: 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 50px;
+    min-height: 250px; /* define altura mínima */
+    margin-bottom: 60px;
+}
+
+.section-form h5 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.section-form input,
+.section-form select {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+
+.section-form button {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.section-form button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+    .status-card {
+        flex: 1 1 100%;
+    }
+    .cards-row {
+        gap: 15px;
+    }
+}

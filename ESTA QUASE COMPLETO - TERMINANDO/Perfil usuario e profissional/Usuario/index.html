@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Profissional</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container profile-container">
+        <div class="header">
+            <div>
+                <h1>Perfil Profissional</h1>
+                <p class="subtitle">Gerencie suas informações e preferências</p>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tabs-list">
+                <button class="tab-trigger active" data-tab="profile">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Perfil</span>
+                </button>
+                <button class="tab-trigger" data-tab="notifications">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span>Notificações</span>
+                </button>
+                <button class="tab-trigger" data-tab="security">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <span>Segurança</span>
+                </button>
+                <button class="tab-trigger" data-tab="settings">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v6m0 6v6m4.22-13.22l-4.24 4.24m0 6.36l4.24 4.24M23 12h-6m-6 0H5m13.22-4.22l-4.24 4.24m0 6.36l4.24 4.24"></path>
+                    </svg>
+                    <span>Configurações</span>
+                </button>
+            </div>
+
+            <!-- Profile Tab -->
+            <div class="tab-content active" id="profile">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Foto do Perfil</h3>
+                        <p class="card-description">Atualize sua foto de perfil profissional</p>
+                    </div>
+                    <div class="card-content profile-photo">
+                        <div class="avatar">
+                            <img src="https://github.com/shadcn.png" alt="Profile" id="profileImage">
+                        </div>
+                        <div class="photo-buttons">
+                            <button class="btn btn-outline" onclick="editPhoto()">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                                Editar Foto
+                            </button>
+                            <button class="btn btn-outline" onclick="document.getElementById('fileInput').click()">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                Trocar Imagem
+                            </button>
+                            <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="uploadPhoto(event)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Informações Pessoais</h3>
+                        <p class="card-description">Mantenha seus dados profissionais atualizados</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Nome Completo</label>
+                                <input type="text" id="name" value="João Silva">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" value="joao.silva@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" value="(11) 98765-4321">
+                        </div>
+                        <div class="form-group">
+                            <label for="bio">Biografia</label>
+                            <textarea id="bio" rows="4">Profissional experiente com mais de 10 anos de atuação no mercado.</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Áreas de Atuação</h3>
+                        <p class="card-description">Selecione as áreas em que você trabalha</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="residential" checked>
+                                <span>Residencial</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="commercial" checked>
+                                <span>Comercial</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="industrial">
+                                <span>Industrial</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="saveProfile()">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Salvar Alterações
+                    </button>
+                </div>
+            </div>
+
+            <!-- Notifications Tab -->
+            <div class="tab-content" id="notifications">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Notificações por E-mail</h3>
+                        <p class="card-description">Escolha quais e-mails você deseja receber</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="emailNewMessages" checked>
+                                <span>Novas mensagens</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="emailProjectUpdates" checked>
+                                <span>Atualizações de projetos</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="emailWeeklyDigest">
+                                <span>Resumo semanal</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Notificações Push</h3>
+                        <p class="card-description">Configure notificações no navegador e mobile</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="pushNewMessages" checked>
+                                <span>Novas mensagens</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="pushProjectUpdates">
+                                <span>Atualizações de projetos</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="pushMarketingUpdates">
+                                <span>Novidades e promoções</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Notificações por SMS</h3>
+                        <p class="card-description">Receba alertas importantes no celular</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="smsImportantUpdates">
+                                <span>Atualizações importantes</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="smsSecurityAlerts" checked>
+                                <span>Alertas de segurança</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="saveNotifications()">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Salvar Preferências
+                    </button>
+                </div>
+            </div>
+
+            <!-- Security Tab -->
+            <div class="tab-content" id="security">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <svg class="icon inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            Alterar Senha
+                        </h3>
+                        <p class="card-description">Mantenha sua conta segura com uma senha forte</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label for="currentPassword">Senha Atual</label>
+                            <input type="password" id="currentPassword" placeholder="Digite sua senha atual">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">Nova Senha</label>
+                            <input type="password" id="newPassword" placeholder="Digite sua nova senha">
+                            <p class="field-hint">Mínimo de 8 caracteres</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmar Nova Senha</label>
+                            <input type="password" id="confirmPassword" placeholder="Confirme sua nova senha">
+                        </div>
+                        <button class="btn btn-primary" onclick="changePassword()">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            Alterar Senha
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <svg class="icon inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            Segurança da Conta
+                        </h3>
+                        <p class="card-description">Opções adicionais de segurança</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="security-option">
+                            <div>
+                                <p class="option-title">Autenticação de Dois Fatores</p>
+                                <p class="option-description">Adicione uma camada extra de segurança</p>
+                            </div>
+                            <button class="btn btn-outline">Ativar</button>
+                        </div>
+                        <div class="security-option">
+                            <div>
+                                <p class="option-title">Sessões Ativas</p>
+                                <p class="option-description">Gerencie dispositivos conectados</p>
+                            </div>
+                            <button class="btn btn-outline">Ver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Preferências do Sistema</h3>
+                        <p class="card-description">Configure o idioma e fuso horário</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label for="language">Idioma</label>
+                            <select id="language">
+                                <option value="pt-BR">Português (Brasil)</option>
+                                <option value="en-US">English (US)</option>
+                                <option value="es-ES">Español</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="timezone">Fuso Horário</label>
+                            <select id="timezone">
+                                <option value="America/Sao_Paulo">Brasília (GMT-3)</option>
+                                <option value="America/New_York">New York (GMT-5)</option>
+                                <option value="Europe/London">Londres (GMT+0)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Privacidade</h3>
+                        <p class="card-description">Controle a visibilidade das suas informações</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="switch-group">
+                            <div>
+                                <p class="option-title">E-mail Público</p>
+                                <p class="option-description">Permitir que outros vejam seu e-mail</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="emailVisibility" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="switch-group">
+                            <div>
+                                <p class="option-title">Telefone Público</p>
+                                <p class="option-description">Permitir que outros vejam seu telefone</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="phoneVisibility">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="switch-group">
+                            <div>
+                                <p class="option-title">Perfil Público</p>
+                                <p class="option-description">Tornar seu perfil visível em buscas</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="profileVisibility" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card danger-card">
+                    <div class="card-header">
+                        <h3 class="text-danger">Zona de Perigo</h3>
+                        <p class="card-description">Ações irreversíveis na sua conta</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="security-option danger-option">
+                            <div>
+                                <p class="option-title">Desativar Conta</p>
+                                <p class="option-description">Sua conta será temporariamente desativada</p>
+                            </div>
+                            <button class="btn btn-outline">Desativar</button>
+                        </div>
+                        <div class="security-option danger-option">
+                            <div>
+                                <p class="option-title">Excluir Conta</p>
+                                <p class="option-description">Todos os seus dados serão permanentemente removidos</p>
+                            </div>
+                            <button class="btn btn-danger">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="saveSettings()">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Salvar Configurações
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

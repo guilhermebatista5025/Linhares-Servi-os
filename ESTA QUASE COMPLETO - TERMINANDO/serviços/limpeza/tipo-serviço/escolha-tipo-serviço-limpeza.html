@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VELTRIX | Seleção de Serviços</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style-tipo-serviço.css" />
+</head>
+
+<body>
+
+
+
+    <header class="navbar">
+        <div class="logo">VELTRIX</div>
+        <nav>
+            <a href="../../../dentro-site/index.html">Início</a>
+            <a href="../escolha-serviços.html">Serviços</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <button class="back-button" onclick="history.back()">
+        ⬅ Voltar
+    </button>
+
+    <main class="container">
+        <h1>Escolha o serviço que você precisa</h1>
+        <p class="sub">
+            Clique no serviço desejado e depois confirme para continuar 👇
+        </p>
+
+        <div class="services-grid">
+            <a href="../limpeza-residencial.html" class="card" data-service="limpeza-residencial">
+                🏠 Limpeza Residencial
+            </a>
+
+            <a href="limpeza-comercial.html" class="card" data-service="limpeza-comercial">
+                🏢 Limpeza Comercial
+            </a>
+
+            <a href="limpeza-pos-obra.html" class="card" data-service="limpeza-pos-obra">
+                🧱 Limpeza Pós-Obra
+            </a>
+
+            <a href="../limpeza-faxina-pesada.html" class="card" data-service="limpeza-pesada">
+                🧼 Faxina Pesada
+            </a>
+
+            <a href="limpeza-vidros.html" class="card" data-service="limpeza-vidros">
+                🪟 Limpeza de Vidros
+            </a>
+
+            <a href="limpeza-externa.html" class="card" data-service="limpeza-externa">
+                🌿 Limpeza de Áreas Externas
+            </a>
+
+            <a href="limpeza-cozinha.html" class="card" data-service="limpeza-cozinha">
+                🍽️ Limpeza de Cozinha
+            </a>
+
+            <a href="limpeza-banheiro.html" class="card" data-service="limpeza-banheiro">
+                🚿 Limpeza de Banheiros
+            </a>
+
+            <a href="limpeza-roupas.html" class="card" data-service="limpeza-roupas">
+                👕 Lavagem e Passadoria
+            </a>
+
+            <a href="limpeza-organizacao.html" class="card" data-service="limpeza-organizacao">
+                📦 Organização de Ambientes
+            </a>
+
+            <a href="limpeza-recorrente.html" class="card" data-service="limpeza-recorrente">
+                🔁 Limpeza Recorrente (Semanal/Mensal)
+            </a>
+
+            <a href="../limpeza-sustentavel.html" class="card" data-service="limpeza-eco">
+                🌱 Limpeza Sustentável
+            </a>
+        </div>
+
+
+        </div>
+
+        <button id="confirmar"><span>Confirmar Seleção</span></button>
+
+        <p id="resultado"></p>
+    </main>
+    <script src="../../script-serviços.js"></script>
+    <script src="../Eletricista/voltar.js"></script>
+</body>
+
+</html>

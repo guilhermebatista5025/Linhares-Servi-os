@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VELTRIX | Seleção de Serviços</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    
+   
+    <header class="navbar">
+      <div class="logo">VELTRIX</div>
+      <nav>
+        <a href="../../index.html">Início</a>
+        <a href="Pintor/Profissionais-residencial/index.html">Profissionais</a>
+        <a href="#">Contato</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Escolha o serviço que você precisa</h1>
+      <p class="sub">
+        Clique no serviço desejado e depois confirme para continuar 👇
+      </p>
+
+      <div class="services-grid">
+        <a href="pedreiro.html" class="card" data-service="pedreiro">🧱Pedreiro</a>
+        <a href="Pintor/tipo-de-pintor/escolha-tipo-serviço-pintor.html" class="card" data-service="pintor">🎨Pintor</a>
+        <a href="escolha-tipo-serviço/escolha-tipo-serviço-eletricista.html" class="card" data-service="eletricista">💡Eletricista</a>
+        <a href="encanador.html" class="card" data-service="encanador">🚰 Encanador</a>
+        <a href="marceneiro.html" class="card" data-service="marceneiro">🪚Marceneiro</a>
+        <a href="jardineiro.html" class="card" data-service="jardineiro">🌿Jardineiro</a>
+        <a href="limpeza/tipo-serviço/escolha-tipo-serviço-limpeza.html" class="card" data-service="limpeza">🧹Limpeza</a>
+        <a href="reparos-gerais.html" class="card" data-service="reparos-gerais">🔧Reparos Gerais</a>
+      </div>
+      
+
+      <button id="confirmar"><span>Confirmar Seleção</span></button>
+
+      <p id="resultado"></p>
+    </main>
+
+    <script src="script-serviços.js"></script>
+  </body>
+</html>

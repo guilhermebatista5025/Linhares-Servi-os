@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VELTRIX | Seleção de Serviços</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style-tipo-serviço.css" />
+</head>
+
+<body>
+
+
+
+    <header class="navbar">
+        <div class="logo">VELTRIX</div>
+        <nav>
+            <a href="../../../dentro-site/index.html">Início</a>
+            <a href="../../escolha-serviços.html">Serviços</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <button class="back-button" onclick="history.back()">
+        ⬅ Voltar
+    </button>
+
+    <main class="container">
+        <h1>Escolha o serviço que você precisa</h1>
+        <p class="sub">
+            Clique no serviço desejado e depois confirme para continuar 👇
+        </p>
+
+        <div class="services-grid">
+            <a href="../pintor-residencial.html" class="card" data-service="pintor-residencial">
+                🏠 Pintura Residencial
+            </a>
+
+            <a href="pintor-comercial.html" class="card" data-service="pintor-comercial">
+                🏢 Pintura Comercial
+            </a>
+
+            <a href="pintor-industrial.html" class="card" data-service="pintor-industrial">
+                🏭 Pintura Industrial
+            </a>
+
+            <a href="pintor-fachadas.html" class="card" data-service="pintor-fachadas">
+                🧱 Fachadas e Muros
+            </a>
+
+            <a href="pintor-texturas.html" class="card" data-service="pintor-texturas">
+                🎨 Texturas e Acabamentos
+            </a>
+
+            <a href="pintor-epoxi.html" class="card" data-service="pintor-epoxi">
+                🧪 Pintura Epóxi
+            </a>
+
+            <a href="pintor-portas-janelas.html" class="card" data-service="pintor-portas-janelas">
+                🚪 Portas, Janelas e Esquadrias
+            </a>
+
+            <a href="../pintor-Restauracao.html" class="card" data-service="pintor-restauracao">
+                🛠️ Restauração e Repintura
+            </a>
+
+            <a href="../pintor-impermeabilizacao.html" class="card" data-service="pintor-impermeabilizacao">
+                💧 Impermeabilização
+            </a>
+
+            <a href="pintor-grafiato.html" class="card" data-service="pintor-grafiato">
+                🪨 Grafiato e Efeitos Rústicos
+            </a>
+
+            <a href="pintor-sinalizacao.html" class="card" data-service="pintor-sinalizacao">
+                🚧 Pintura de Sinalização
+            </a>
+
+            <a href="pintor-manutencao.html" class="card" data-service="pintor-manutencao">
+                🔁 Manutenção e Repintura Periódica
+            </a>
+        </div>
+
+
+        </div>
+
+        <button id="confirmar"><span>Confirmar Seleção</span></button>
+
+        <p id="resultado"></p>
+    </main>
+    <script src="../../script-serviços.js  "></script>
+    <script src="../voltar copy.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VELTRIX | Seleção de Serviços</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style-tipo-serviço.css" />
+  </head>
+
+  <body>
+
+    
+   
+    <header class="navbar">
+      <div class="logo">VELTRIX</div>
+      <nav>
+        <a href="../../dentro-site/index.html">Início</a>
+        <a href="../escolha-serviços.html">Serviços</a>
+        <a href="#">Contato</a>
+      </nav>
+    </header>
+
+     <button class="back-button" onclick="history.back()">
+      ⬅ Voltar
+    </button>
+
+    <main class="container">
+      <h1>Escolha o serviço que você precisa</h1>
+      <p class="sub">
+        Clique no serviço desejado e depois confirme para continuar 👇
+      </p>
+
+      <div class="services-grid">
+        <a href="../Eletricista/eletricista-residencial.html" class="card" data-service="eletricista-residencial">🏠 Residencial</a>
+        <a href="eletricista-comercial.html" class="card" data-service="eletricista-comercial">🏢 Comercial</a>
+        <a href="eletricista-industrial.html" class="card" data-service="eletricista-industrial">🏭 Industrial</a>
+        <a href="eletricista-automacao.html" class="card" data-service="eletricista-automacao">🤖 Automação / Smart Home</a>
+        <a href="eletricista-seguranca.html" class="card" data-service="eletricista-seguranca">🎥 Segurança e Monitoramento</a>
+        <a href="eletricista-energia.html" class="card" data-service="eletricista-energia">☀️ Energia Renovável</a>
+        <a href="eletricista-cabeamento.html" class="card" data-service="eletricista-cabeamento">📡 Infraestrutura de Redes e Cabeamento</a>
+        <a href="eletricista-manutencao.html" class="card" data-service="eletricista-manutencao">⚡ Manutenção Preventiva</a>
+        <a href="eletricista-protecao.html" class="card" data-service="eletricista-protecao">⛓️ Proteção e Aterramento</a>
+        <a href="eletricista-iluminacao.html" class="card" data-service="eletricista-iluminacao">💡 Iluminação Especializada</a>
+        <a href="eletricista-climatizacao.html" class="card" data-service="eletricista-climatizacao">❄️ Sistemas de Climatização</a>
+        <a href="eletricista-backup.html" class="card" data-service="eletricista-backup">🔋 Sistemas de Backup e Geradores</a>
+      </div>
+      
+      </div>
+
+      <button id="confirmar"><span>Confirmar Seleção</span></button>
+
+      <p id="resultado"></p>
+    </main>
+    <script src="../script-serviços.js  "></script>
+    <script src="../Eletricista/voltar.js"></script>
+  </body>
+</html>
