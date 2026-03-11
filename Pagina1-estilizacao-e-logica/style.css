@@ -102,7 +102,7 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   opacity: 0;
   pointer-events: none;
-  visiblity: hidden;
+  visibility: hidden;
   transition: opacity 220ms ease, transform 220ms ease, visibility 220ms;
   z-index: 2000;           /* sempre por cima */
 }
@@ -759,7 +759,7 @@ h2 {
 }
 
 .download-image img {
-  width: 500px;
+  width: 390px;
   transform: rotate(-10deg);
   filter: drop-shadow(0 0 25px rgba(96, 165, 250, 0.4));
   transition: transform 0.3s ease;
@@ -1019,7 +1019,7 @@ h2 {
 }
 
 .popup-img {
-  width: 120px; /* largura da imagem */
+  height: 150px;
   margin-bottom: 15px; /* espaço abaixo da imagem */
   filter: drop-shadow(
     0 0 10px rgba(76, 120, 187, 0.916)
