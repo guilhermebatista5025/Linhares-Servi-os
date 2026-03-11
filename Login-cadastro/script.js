@@ -17,7 +17,7 @@ function cadastrar(){
  const email = document.querySelector(".sign-up input[type='email']").value;
  const senha = document.querySelector(".sign-up input[type='password']").value;
 
- fetch("http://localhost:3000/cadastro",{
+ fetch("http://localhost:3000/api/cadastro",{
   method:"POST",
   headers:{
    "Content-Type":"application/json"
@@ -41,7 +41,7 @@ function login(){
  const email = document.querySelector(".sign-in input[type='email']").value;
  const senha = document.querySelector(".sign-in input[type='password']").value;
 
- fetch("http://localhost:3000/login",{
+ fetch("http://localhost:3000/api/login",{
   method:"POST",
   headers:{
    "Content-Type":"application/json"
