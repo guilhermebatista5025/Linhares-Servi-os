@@ -9,13 +9,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Servindo os arquivos estáticos (HTML, CSS, JS)
-// O ".." sobe uma pasta para pegar os arquivos da raiz
-app.use(express.static(path.join(__dirname, "..")));
-
 // Endereço da API 
 // eu uso "/api" para não dar conflito com meus arquivos .html
 app.use("/api", authRoutes);
+
+// Servindo os arquivos estáticos (HTML, CSS, JS)
+// O ".." sobe uma pasta para pegar os arquivos da raiz
+app.use(express.static(path.join(__dirname, "..")));
 
 app.listen(3000, () => {
     console.log("Servidor rodando em http://localhost:3000");

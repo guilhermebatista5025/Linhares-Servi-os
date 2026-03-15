@@ -56,73 +56,73 @@
                 <!-- CONTAINERS ABAIXO -->
 
 
-                <div class="orcamento-wrap">
-                    <div class="orcamento-container" id="orcamento-solicitar">
-                        <h4>Solicitar agora</h4>
-                        <label>Tipo de serviço:
-                            <input type="text" placeholder="Ex: Plantio, Controle de pragas..." />
-                        </label>
-                        <label>Dia do serviço:
-                            <input type="date" />
-                        </label>
-                        <label>Horário:
-                            <input type="time" />
-                        </label>
-                        <label class="label-valor">
-                            Valor do Serviço:
-                            <input type="text" value="R$ 109,99" readonly />
-                        </label>
+                <div class="orcamento-container" id="orcamento-solicitar">
+                    <h4>Solicitar agora</h4>
+                    <label>Tipo de serviço:
+                        <input type="text" id="tipo-servico-solicitar"
+                            placeholder="Ex: Plantio, Controle de pragas..." />
+                    </label>
+                    <label>Dia do serviço:
+                        <input type="date" id="data-servico-solicitar" /> <!-- ID ADICIONADO -->
+                    </label>
+                    <label>Horário:
+                        <input type="time" id="horario-servico-solicitar" /> <!-- ID ADICIONADO -->
+                    </label>
+                    <label class="label-valor">
+                        Valor do Serviço:
+                        <input type="text" id="valor-servico-solicitar" value="R$ 109,99" readonly />
+                    </label>
 
-                        <label class="checkbox">
-                            <input type="checkbox" /> Li e concordo com as diretrizes da
-                            empresa
-                        </label>
-                        <button class="btn-full gerar-qr">Gerar QR Code Pix</button>
-                    </div>
-
-
-
-
-                    <div class="orcamento-container" id="orcamento-teste">
-                        <h4>Orçamento teste</h4>
-                        <label>Dia do serviço:
-                            <input type="date" />
-                        </label>
-                        <label>Horário:
-                            <input type="time" />
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" /> Li e concordo com as diretrizes da
-                            empresa
-                        </label>
-                        <button class="btn-full">Acessar Questionário</button>
-                    </div>
-
-
-
-
-                    <div class="orcamento-container" id="orcamento-pessoalmente">
-                        <h4>Orçamento pessoalmente</h4>
-                        <label>Data da Reunião:
-                            <input type="date" />
-                        </label>
-                        <label>Horário:
-                            <input type="time" />
-                        </label>
-                        <label>Local:
-                            <input type="text" placeholder="Ex: Casa Cliente, Cafeteria..." />
-                        </label>
-                        <label class="label-valor">
-                            Valor do Serviço:
-                            <input type="text" value="R$ 59,99" readonly />
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" /> Li e concordo com as diretrizes da
-                            empresa
-                        </label>
-                        <button class="btn-full gerar-qr">Gerar QR Code Pix</button>
-                    </div>
+                    <label class="checkbox">
+                        <input type="checkbox" id="concordo-diretrizes-solicitar" /> Li e concordo com as diretrizes da
+                        empresa
+                    </label>
+                    <button class="btn-full gerar-qr">Gerar QR Code Pix</button>
                 </div>
+
+
+
+
+                <div class="orcamento-container" id="orcamento-teste">
+                    <h4>Orçamento teste</h4>
+                    <label>Dia do serviço:
+                        <input type="date" />
+                    </label>
+                    <label>Horário:
+                        <input type="time" />
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" /> Li e concordo com as diretrizes da
+                        empresa
+                    </label>
+                    <button class="btn-full">Acessar Questionário</button>
+                </div>
+
+
+
+
+                <div class="orcamento-container" id="orcamento-pessoalmente">
+                    <h4>Orçamento pessoalmente</h4>
+                    <label>Data da Reunião:
+                        <input type="date" **id="data-servico" ** />
+                    </label>
+                    <label>Horário:
+                        <input type="time" **id="horario-servico" ** />
+                    </label>
+                    <label>Local:
+                        <input type="text" **id="local-servico" ** placeholder="Ex: Casa Cliente, Cafeteria..." />
+                    </label>
+                    <label class="label-valor">
+                        Valor do Serviço:
+                        <input type="text" **id="valor-servico" ** value="R$ 59,99" readonly />
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" **id="concordo-diretrizes" ** /> Li e concordo com as diretrizes da
+                        empresa
+                    </label>
+                    <button class="btn-full gerar-qr">Gerar QR Code Pix</button>
+                </div>
+
 
 
 
@@ -145,9 +145,14 @@
     <div class="pix-popup">
         <div class="pix-content">
             <button class="close-popup">×</button>
-            <img src="../../../../imagens para o site/e6372d6b-30e9-4b92-b82a-30b95fb22ff4.jpeg" alt="QR Code Pix" />
+            <img src="../../../../imagens-pagina2/pix.jpeg" alt="QR Code Pix" />
             <div class="pix-info">
                 <input type="text" id="pix-key" value="09f29b17-c488-4876-a9ae-7a51fd417038" readonly />
+                <!-- NOVO BOTÃO -->
+                <button id="btn-confirmar-pagamento" class="btn-full"
+                    style="background: #00ff88; color: #000; margin-top: 10px; font-weight: bold;">
+                    Já realizei o pagamento
+                </button>
                 <button class="copy-btn">Copiar</button>
             </div>
         </div>
