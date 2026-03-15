@@ -144,6 +144,28 @@ body {
 }
 
 
+/* === ESTILIZAÇÃO LIMPA: APENAS TEXTO E ÍCONE === */
+
+/* 1. Garante que não haja barras ou fundos no hover deste botão */
+.sidebar .menu-list li a.denuncia-btn:hover {
+    background-color: transparent !important; /* Remove qualquer fundo */
+    border: none !important;                  /* Remove qualquer borda lateral */
+    box-shadow: none !important;               /* Remove sombras de bloco */
+    color: #ffc107 !important;                 /* Texto fica amarelo */
+}
+
+/* 2. Garante que o ícone acompanhe a cor amarela */
+.sidebar .menu-list li a.denuncia-btn:hover i {
+    color: #ffc107 !important;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.5); /* Um leve brilho apenas no ícone */
+}
+
+/* 3. Remove aquele efeito de "linha subindo" (::after) se ele existir */
+.sidebar .menu-list li a.denuncia-btn::after {
+    display: none !important;
+}
+
+
 /* ================= RESPONSIVO ================= */
 @media (max-width: 1100px) {
   .nav-inner {
