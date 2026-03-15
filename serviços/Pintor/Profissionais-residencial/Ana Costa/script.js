@@ -39,10 +39,11 @@ copyBtn.addEventListener("click", () => {
 if (btnConfirmar) {
     btnConfirmar.addEventListener("click", async () => {
         const dadosUsuario = JSON.parse(localStorage.getItem("usuario"));
-        
+
         if (!dadosUsuario || !dadosUsuario.id) {
-            alert("Erro: Sessão expirada. Faça login novamente.");
-            window.location.href = "../login/index.html";
+            alert("Erro: Sessão expirada. Faça login novamente.");  
+            // MUDE AQUI TAMBÉM
+            window.location.href = "/Login-cadastro/index.html";
             return;
         }
 
@@ -107,7 +108,7 @@ if (btnConfirmar) {
             if (response.ok) {
                 alert("Pagamento confirmado! Redirecionando...");
                 popup.style.display = "none";
-                window.location.href = "./meus-servicos.html"; 
+                window.location.href = "/Dashboard/index.html";
             } else {
                 const erro = await response.json();
                 alert("Erro ao salvar: " + (erro.msg || "Erro no servidor."));
