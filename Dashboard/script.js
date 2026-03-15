@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const servicos = await response.json();
 
         if (servicos.length === 0) {
-            container.innerHTML = "<p style='color: white; text-align: center; width: 100%; grid-column: 1/-1;'>Você ainda não contratou nenhum serviço.</p>";
+            container.innerHTML = "<p style='color: black; text-align: center; width: 100%; grid-column: 1/-1;'>Você ainda não contratou nenhum serviço.</p>";
             return;
         }
 
